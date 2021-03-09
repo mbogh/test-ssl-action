@@ -1,0 +1,22 @@
+name: 'testssl.sh Scan'
+description: 'A GitHub Action for scanning a host with testssl.sh and comparing the result against a minimum accepted grade.'
+auhtor: Morten Bøgh
+branding:
+  icon: 'lock'
+  color: 'orange'
+inputs:
+  host:
+    description: 'The host to scan with testssl.sh'
+    required: true
+  image:
+    description: 'Docker image to run testssl.sh'
+    default: 'drwetter/testssl.sh'
+  output:
+    description: 'Folder for scan reports'
+    default: 'output'
+  grade:
+    description: 'Minimum accepted grade'
+    default: 'A+'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

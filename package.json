@@ -1,0 +1,38 @@
+{
+  "name": "test-ssl-action",
+  "version": "1.0.0",
+  "description": "testssl.sh Action",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "prepare": "ncc build index.js -o dist --source-map --license licenses.txt",
+    "test": "jest",
+    "all": "npm run lint && npm run prepare && npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mbogh/test-ssl-action.git"
+  },
+  "keywords": [
+    "GitHub",
+    "Actions",
+    "Docker",
+    "testssl.sh",
+    "SSL"
+  ],
+  "author": "Morten Bøgh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mbogh/test-ssl-action/issues"
+  },
+  "homepage": "https://github.com/mbogh/test-ssl-action",
+  "dependencies": {
+    "@actions/core": "^1.2.5",
+    "@actions/exec": "^1.0.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.27.0",
+    "eslint": "^7.4.0",
+    "jest": "^26.6.3"
+  }
+}
