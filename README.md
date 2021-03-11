@@ -20,4 +20,9 @@ The scan result will be placed in the output folder, the result will be availabl
   uses: mbogh/test-ssl-action@v1
   with:
     host: 'example.com'
+- uses: actions/upload-artifact@v2
+  if: always()
+  with:
+    name: testssl.sh reports
+    path: 'output/*'
 ```
