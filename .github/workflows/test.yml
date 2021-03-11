@@ -32,6 +32,7 @@ jobs:
         host: 'example.com'
         grade: 'B'
     - uses: actions/upload-artifact@v2
+      if: always()
       with:
         name: testssl.sh reports
         path: 'output/'
