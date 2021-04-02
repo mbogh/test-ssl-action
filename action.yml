@@ -17,6 +17,9 @@ inputs:
   grade:
     description: 'Minimum accepted grade'
     default: 'A+'
+  options:
+    description: 'Additionnal testssl.sh CLI options'
+    default: ''
 runs:
   using: 'node12'
   main: 'dist/index.js'

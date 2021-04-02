@@ -8,6 +8,7 @@ A GitHub Action for scanning a host with [testssl.sh](https://testssl.sh) and co
 - `image`: Docker image to run testssl.sh (Default: `drwetter/testssl.sh`)
 - `output`: Folder for scan reports (Default: `output`)
 - `grade`: Minimum accepted grade (Default: `A+`)
+- `options`: Additionnal testssl.sh CLI options
 
 ## Outputs
 
