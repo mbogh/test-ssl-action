@@ -22,7 +22,7 @@ async function run() {
 
     await exec.exec(`mkdir -p ${workspace}/${output}`);
     await exec.exec(`docker pull ${image} -q`);
-    let command = (`docker run --user 0:0 -v ${workspace}/${output}:/data --network="host" ` + `-t ${image} --jsonfile /data --csvfile /data --htmlfile /data ${options} ${host}`);
+    let command = (`docker run --user 0:0 -v ${workspace}/${output}:/data --network="host" ` + `-t ${image} ${options} ${host}`);
     try {
       await exec.exec(command);
 
