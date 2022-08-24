@@ -19,7 +19,7 @@ inputs:
     default: 'A+'
   options:
     description: 'Additionnal testssl.sh CLI options'
-    default: ''
+    default: '--jsonfile /data --csvfile /data --htmlfile /data'
 runs:
   using: 'node12'
   main: 'dist/index.js'
