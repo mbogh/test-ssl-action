@@ -10,7 +10,7 @@ jobs:
     name: Run Lint
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - run: npm ci
     - run: npm run lint
 
@@ -18,7 +18,7 @@ jobs:
     name: Run Tests
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - run: npm ci
     - run: npm run test
 
@@ -26,12 +26,12 @@ jobs:
     name: Test Action
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - uses: ./
       with:
         host: 'example.com'
         grade: 'B'
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v3
       if: always()
       with:
         name: testssl.sh reports
