@@ -18,7 +18,7 @@ The scan result will be placed in the output folder, the result will be availabl
 
 ```yml
 - name: testssl.sh Scan
-  uses: mbogh/test-ssl-action@v2
+  uses: mbogh/test-ssl-action@v3
   with:
     host: 'example.com'
 - uses: actions/upload-artifact@v3
