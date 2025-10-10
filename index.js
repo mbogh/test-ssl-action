@@ -31,7 +31,7 @@ async function run() {
       let report = JSON.parse(fs.readFileSync(path + '/' + reportFile));
       let grades = report.filter(finding => finding['id'] == 'overall_grade').map(finding => Grades[finding['finding']]);
 
-      let lowestGrade = grades.reduce((previous, current) => previous.value >= current.value);
+      let lowestGrade = grades.reduce((previous, current) => previous.value >= current.value ? current : previous);
 
       if (lowestGrade.value > thresshold.value) {
         core.setFailed('Minimum accepted grade is ' + thresshold.name + ' and lowest grade found in scan is ' + lowestGrade.name);
