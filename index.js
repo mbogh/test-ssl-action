@@ -25,7 +25,10 @@ async function run() {
     await exec.exec(`docker pull ${image} -q`);
     let command = (`docker run --user 0:0 -v ${workspace}/${output}:/data --network="host" ` + `-t ${image} ${options} ${host}`);
     try {
-      await exec.exec(command);
+      let execOptions = {
+        ignoreReturnCode: true
+      };
+      await exec.exec(command, [], execOptions);
 
       let path = workspace + '/' + output;
       let reportFile = fs.readdirSync(path).filter(fn => fn.startsWith(host) && fn.endsWith('.json'))[0];
